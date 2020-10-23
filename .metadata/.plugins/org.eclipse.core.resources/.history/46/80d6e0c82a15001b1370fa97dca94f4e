@@ -1,0 +1,13 @@
+/**
+ * Desc : Creating a two dimensional array for storing salutation and names.
+ * @author Aman Soni
+ *
+ */
+public class SalutationAndNameAssignment {
+
+	public static void main(String[] args) {
+		String salutationNameArray[][] = {{"mr.","mrs.","miss."},{"prateek","surya","aiswarya","rohan","rakesh"}};
+		System.out.println(salutationNameArray[0][0] + " " +salutationNameArray[1][0]);
+	}
+
+}

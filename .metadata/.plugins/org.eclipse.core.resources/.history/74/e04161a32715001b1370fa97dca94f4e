@@ -1,0 +1,88 @@
+/**
+ * Desc : Creating a 5 story car parking system simulation.
+ * @author Aman Soni
+ *
+ */
+import java.util.Scanner;
+
+class CarDetail{
+	private String name;
+	private String registrationNumber;
+	
+	public CarDetail(String name, String registrationNumber) {
+		this.name = name;
+		this.registrationNumber = registrationNumber;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getRegistrationNumber() {
+		return this.registrationNumber;
+	}
+}
+
+public class CarParkingSimulationAssignment {
+	public static void main(String[] args) {
+		/*
+		 * Initializing the initial car parking slots.
+		 */
+		CarDetail parkingSlots[][] = new CarDetail[5][];
+		parkingSlots[0] = new CarDetail[100];
+		parkingSlots[1] = new CarDetail[70];
+		parkingSlots[2] = new CarDetail[50];
+		parkingSlots[3] = new CarDetail[20];
+		parkingSlots[4] = new CarDetail[10];
+		
+		do {
+			System.out.println("Welcome to 5 story car parking system");
+			System.out.println("1. Park car");
+			System.out.println("2. Get car");
+			System.out.println("3. Get available space");
+			System.out.println("4. Exit");
+			System.out.println("Enter your choice: ");
+			Scanner in = new Scanner(System.in);
+			int choice = in.nextInt();
+			in.nextLine();
+			switch(choice) {
+				case 1:
+					System.out.print("Enter the car name: ");
+					String carName = in.nextLine();
+					System.out.print("Enter the car registration number: ");
+					String registrationNumber = in.nextLine();
+					CarDetail car = new CarDetail(carName,registrationNumber);
+					if(parkCar(parkingSlots,car){
+						System.out.println("Car is successfully parked");
+					}
+					else {
+						System.out.println("Car parking is full");
+					}
+					
+			}
+			
+		}
+
+	}
+	/*
+	 * Method for parking the car
+	 */
+	public static boolean parkCar(CarDetail[][] parkingSlots,CarDetail car) {
+		  for(int i=0;i<parkingSlots.length;i++) {
+			  for(int j=0;j<parkingSlots[i].length;j++) {
+				  if(parkingSlots[i][j]==null) {
+					  parkingSlots[i][j] = car;
+					  return true;
+				  }
+			  }
+		  }
+		  return false;
+	}
+	/*
+	 * Method to get the car.
+	 */
+	public static CarDetail getCar(String registrationNumber) {
+		
+	}
+
+}

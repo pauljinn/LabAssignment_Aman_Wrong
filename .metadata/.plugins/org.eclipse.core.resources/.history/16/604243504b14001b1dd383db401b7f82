@@ -1,0 +1,37 @@
+/**
+ * Desc : Printing nth value of the fibonacci sequence by using recursive and non recursive function.
+ * @author Aman Soni
+ *
+ */
+public class FibonacciSequenceAssignment {
+
+	public static void main(String[] args) {
+		System.out.println("7th term using non recursive approach: "+printFibonacciNonRecursively(7));
+		System.out.println("7th term using recursice approach: " + printFibonacciRecursively(7));
+
+	}
+	
+	public static int printFibonacciNonRecursively(int nTerm) {
+		if(nTerm<=0)
+			System.out.println("Provide right nth term");
+		else if(nTerm==1 || nTerm==2)
+				return 1;
+		int nextTerm = 1;
+		int prevTerm = 1;
+		for(int i=3;i<=nTerm;i++) {
+				int temp = nextTerm;
+				nextTerm = nextTerm + prevTerm;
+				prevTerm = temp;
+		}
+		return nextTerm;
+	}
+	public static int printFibonacciRecursively(int nTerm) {
+		if(nTerm<=0)
+			System.out.println("Provide right nth term");
+		else if(nTerm==1 || nTerm==2)
+			return 1;
+		
+		return printFibonacciRecursively(nTerm-1) + printFibonacciRecursively(nTerm-2);
+	}
+
+}
