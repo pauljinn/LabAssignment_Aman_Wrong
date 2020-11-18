@@ -11,7 +11,7 @@ public class SortStringAssignment {
 		 */
 		String[] countries = {"Zimbabwe", "South-Africa", "India", "America", "Yugoslavia", " Australia", "Denmark", "France", "Netherlands", "Italy", "Germany"};  
 		/*
-		 * A variable to store sorted array of string objects.
+		 * variable to store sorted array of string objects.
 		 */
 		String[] sortedCountries = sortStrings(countries);
 		/*
